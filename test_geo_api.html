@@ -24,8 +24,9 @@
                 output.innerHTML = '<p>Latitude is ' + latitude + '° <br>Longitude is ' + longitude + '°</p>';
             };
 
-            function error() {
-                output.innerHTML = "Unable to retrieve your location";
+            function error(err) {
+                output.innerHTML = "Unable to retrieve your location, error: [code: " + err.code + ", message: " + err.message +
+                "].  PERMISSION_DENIED: 1, POSITION_UNAVAILABLE: 2, TIMEOUT: 3";
             };
 
             output.innerHTML = "<p>Locating…</p>";
